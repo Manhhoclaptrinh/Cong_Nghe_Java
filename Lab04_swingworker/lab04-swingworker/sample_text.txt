@@ -1,0 +1,4 @@
+Java SwingWorker giúp chạy tác vụ nền.
+Swing giao diện chạy trên EDT.
+SwingWorker giúp tránh treo giao diện.
+Bài lab 4 sử dụng JTable và JFileChooser.
