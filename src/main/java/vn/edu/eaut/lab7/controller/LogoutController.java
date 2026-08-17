@@ -1,1 +1,0 @@
-package vn.edu.eaut.lab7.controller; import jakarta.servlet.*; import jakarta.servlet.http.*; import jakarta.servlet.annotation.*; import java.io.*; @WebServlet("/logout") public class LogoutController extends HttpServlet {protected void doGet(HttpServletRequest r,HttpServletResponse s)throws IOException{r.getSession().invalidate();s.sendRedirect(r.getContextPath()+"/login");}}

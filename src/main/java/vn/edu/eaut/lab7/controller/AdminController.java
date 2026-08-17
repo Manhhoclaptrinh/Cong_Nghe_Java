@@ -1,1 +1,0 @@
-package vn.edu.eaut.lab7.controller; import jakarta.servlet.*; import jakarta.servlet.http.*; import jakarta.servlet.annotation.*; import java.io.*; @WebServlet("/admin") public class AdminController extends HttpServlet {protected void doGet(HttpServletRequest r,HttpServletResponse s)throws ServletException,IOException{r.getRequestDispatcher("/admin.jsp").forward(r,s);}}
