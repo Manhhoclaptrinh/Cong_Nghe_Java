@@ -1,0 +1,1 @@
+package vn.edu.eaut.lab7.util; import java.util.*; public class PaginationUtil { public static <T> List<T> paginate(List<T> d,int p,int s){int from=(p-1)*s;if(from>=d.size())return List.of();return d.subList(from,Math.min(from+s,d.size()));} public static int totalPages(int n,int s){return Math.max(1,(int)Math.ceil((double)n/s));}}
