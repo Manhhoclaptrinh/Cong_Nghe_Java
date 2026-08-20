@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+
+<h:head>
+
+    <title>Form sách</title>
+
+</h:head>
+
+<h:body>
+
+    <h2>Form sách - JSF</h2>
+
+    <h:messages
+        globalOnly="true"
+        style="color:green"/>
+
+    <h:form>
+
+        <p>
+
+            Mã sách:
+
+            <br/>
+
+            <h:inputText
+                id="maSach"
+                value="#{sachBean.sach.maSach}"/>
+
+        </p>
+
+        <p>
+
+            Tên sách:
+
+            <br/>
+
+            <h:inputText
+                id="tenSach"
+                value="#{sachBean.sach.tenSach}"
+                required="true"
+                requiredMessage="Tên sách không được để trống"/>
+
+            <h:message
+                for="tenSach"
+                style="color:red"/>
+
+        </p>
+
+        <p>
+
+            Tác giả:
+
+            <br/>
+
+            <h:inputText
+                id="tacGia"
+                value="#{sachBean.sach.tacGia}"
+                required="true"
+                requiredMessage="Tác giả không được để trống"/>
+
+            <h:message
+                for="tacGia"
+                style="color:red"/>
+
+        </p>
+
+        <p>
+
+            Nhà xuất bản:
+
+            <br/>
+
+            <h:inputText
+                id="nxb"
+                value="#{sachBean.sach.nhaXuatBan}"/>
+
+        </p>
+
+        <p>
+
+            Năm xuất bản:
+
+            <br/>
+
+            <h:inputText
+                id="nam"
+                value="#{sachBean.sach.namXuatBan}"
+                required="true"
+                requiredMessage="Năm xuất bản bắt buộc nhập"/>
+
+            <h:message
+                for="nam"
+                style="color:red"/>
+
+        </p>
+
+        <h:commandButton
+            value="Lưu sách"
+            action="#{sachBean.save}"/>
+
+    </h:form>
+
+    <br/>
+
+    <h:link
+        outcome="sach-list"
+        value="Xem danh sách sách"/>
+
+    <br/>
+
+    <h:link
+        outcome="index"
+        value="Trang chủ"/>
+
+</h:body>
+
+</html>

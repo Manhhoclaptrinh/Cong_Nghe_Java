@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets">
+
+<h:head>
+
+    <title>
+        <ui:insert name="title">
+            Lab 8 JSF
+        </ui:insert>
+    </title>
+
+</h:head>
+
+<h:body>
+
+    <header>
+
+        <h1>LAB 8 - JSF</h1>
+
+        <hr/>
+
+    </header>
+
+    <nav>
+
+        <h:link
+            outcome="index"
+            value="Trang chủ"/>
+
+        |
+
+        <h:link
+            outcome="sinhvien-list"
+            value="Sinh viên"/>
+
+        |
+
+        <h:link
+            outcome="sach-list"
+            value="Sách"/>
+
+        |
+
+        <h:link
+            outcome="product-form"
+            value="Sản phẩm"/>
+
+    </nav>
+
+    <hr/>
+
+    <main>
+
+        <ui:insert name="content"/>
+
+    </main>
+
+    <hr/>
+
+    <footer>
+
+        <p>
+            Công nghệ Java - IT3242
+        </p>
+
+    </footer>
+
+</h:body>
+
+</html>

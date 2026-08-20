@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html">
+
+<ui:composition template="/template.xhtml">
+
+    <ui:define name="title">
+
+        Sinh viên
+
+    </ui:define>
+
+    <ui:define name="content">
+
+        <h2>Quản lý sinh viên</h2>
+
+        <h:link
+            outcome="sinhvien-form"
+            value="Thêm sinh viên"/>
+
+        <br/>
+
+        <h:link
+            outcome="sinhvien-list"
+            value="Danh sách sinh viên"/>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

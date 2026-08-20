@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+<h:head>
+
+    <title>Danh sách sách</title>
+
+</h:head>
+
+<h:body>
+
+    <h2>Danh sách sách</h2>
+
+    <h:messages
+        globalOnly="true"
+        style="color:green"/>
+
+    <h:form>
+
+        <h:dataTable
+            value="#{sachBean.dsSach}"
+            var="sach"
+            border="1"
+            cellpadding="8">
+
+            <h:column>
+
+                <f:facet name="header">
+                    ID
+                </f:facet>
+
+                #{sach.id}
+
+            </h:column>
+
+            <h:column>
+
+                <f:facet name="header">
+                    Mã sách
+                </f:facet>
+
+                #{sach.maSach}
+
+            </h:column>
+
+            <h:column>
+
+                <f:facet name="header">
+                    Tên sách
+                </f:facet>
+
+                #{sach.tenSach}
+
+            </h:column>
+
+            <h:column>
+
+                <f:facet name="header">
+                    Tác giả
+                </f:facet>
+
+                #{sach.tacGia}
+
+            </h:column>
+
+            <h:column>
+
+                <f:facet name="header">
+                    Nhà xuất bản
+                </f:facet>
+
+                #{sach.nhaXuatBan}
+
+            </h:column>
+
+            <h:column>
+
+                <f:facet name="header">
+                    Năm
+                </f:facet>
+
+                #{sach.namXuatBan}
+
+            </h:column>
+
+            <h:column>
+
+                <f:facet name="header">
+                    Thao tác
+                </f:facet>
+
+                <h:commandButton
+                    value="Xóa"
+                    action="#{sachBean.delete(sach.id)}"/>
+
+            </h:column>
+
+        </h:dataTable>
+
+    </h:form>
+
+    <br/>
+
+    <h:link
+        outcome="sach-form"
+        value="Thêm sách"/>
+
+</h:body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+<h:head>
+
+    <title>Form sinh viên JSF</title>
+
+</h:head>
+
+<h:body>
+
+    <h2>Form sinh viên bằng JSF</h2>
+
+    <h:messages
+        globalOnly="true"
+        style="color:green"/>
+
+    <h:form>
+
+        <p>
+
+            <h:outputLabel
+                for="ma"
+                value="Mã sinh viên:"/>
+
+            <br/>
+
+            <h:inputText
+                id="ma"
+                value="#{sinhVienBean.sinhVien.maSinhVien}"
+                required="true"
+                requiredMessage="Mã sinh viên bắt buộc nhập"/>
+
+            <h:message
+                for="ma"
+                style="color:red"/>
+
+        </p>
+
+        <p>
+
+            <h:outputLabel
+                for="hoten"
+                value="Họ tên:"/>
+
+            <br/>
+
+            <h:inputText
+                id="hoten"
+                value="#{sinhVienBean.sinhVien.hoTen}"
+                required="true"
+                requiredMessage="Họ tên bắt buộc nhập"/>
+
+            <h:message
+                for="hoten"
+                style="color:red"/>
+
+        </p>
+
+        <p>
+
+            <h:outputLabel
+                for="email"
+                value="Email:"/>
+
+            <br/>
+
+            <h:inputText
+                id="email"
+                value="#{sinhVienBean.sinhVien.email}"/>
+
+            <h:message
+                for="email"
+                style="color:red"/>
+
+        </p>
+
+        <p>
+
+            <h:outputLabel
+                for="lop"
+                value="Lớp:"/>
+
+            <br/>
+
+            <h:selectOneMenu
+                id="lop"
+                value="#{sinhVienBean.sinhVien.lop}"
+                required="true"
+                requiredMessage="Vui lòng chọn lớp">
+
+                <f:selectItem
+                    itemLabel="-- Chọn lớp --"
+                    itemValue=""
+                    noSelectionOption="true"/>
+
+                <f:selectItem
+                    itemLabel="DCCNTT15.10.1"
+                    itemValue="DCCNTT15.10.1"/>
+
+                <f:selectItem
+                    itemLabel="DCCNTT15.10.2"
+                    itemValue="DCCNTT15.10.2"/>
+
+                <f:selectItem
+                    itemLabel="DCCNTT15.10.3"
+                    itemValue="DCCNTT15.10.3"/>
+
+            </h:selectOneMenu>
+
+            <h:message
+                for="lop"
+                style="color:red"/>
+
+        </p>
+
+        <p>
+
+            <h:commandButton
+                rendered="#{!sinhVienBean.editing}"
+                value="Lưu sinh viên"
+                action="#{sinhVienBean.save}"/>
+
+            <h:commandButton
+                rendered="#{sinhVienBean.editing}"
+                value="Cập nhật"
+                action="#{sinhVienBean.update}"/>
+
+        </p>
+
+    </h:form>
+
+    <p>
+
+        <h:link
+            outcome="sinhvien-list"
+            value="Xem danh sách"/>
+
+    </p>
+
+</h:body>
+
+</html>

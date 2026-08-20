@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+
+<h:head>
+
+    <title>Quản lý sản phẩm</title>
+
+</h:head>
+
+<h:body>
+
+    <h2>Form sản phẩm - JSF</h2>
+
+    <h:messages
+        globalOnly="true"
+        style="color:green"/>
+
+    <h:form>
+
+        <p>
+
+            Tên sản phẩm:
+
+            <br/>
+
+            <h:inputText
+                id="name"
+                value="#{productBean.product.name}"
+                required="true"
+                requiredMessage="Tên sản phẩm bắt buộc nhập"/>
+
+            <h:message
+                for="name"
+                style="color:red"/>
+
+        </p>
+
+        <p>
+
+            Giá:
+
+            <br/>
+
+            <h:inputText
+                id="price"
+                value="#{productBean.product.price}"
+                required="true"
+                requiredMessage="Giá bắt buộc nhập"/>
+
+            <h:message
+                for="price"
+                style="color:red"/>
+
+        </p>
+
+        <p>
+
+            Số lượng:
+
+            <br/>
+
+            <h:inputText
+                id="quantity"
+                value="#{productBean.product.quantity}"
+                required="true"
+                requiredMessage="Số lượng bắt buộc nhập"/>
+
+            <h:message
+                for="quantity"
+                style="color:red"/>
+
+        </p>
+
+        <h:commandButton
+            value="Lưu sản phẩm"
+            action="#{productBean.save}"/>
+
+    </h:form>
+
+    <br/>
+
+    <h:form>
+
+        <h:dataTable
+            value="#{productBean.dsProduct}"
+            var="p"
+            border="1"
+            cellpadding="8">
+
+            <h:column>
+                <h:outputText value="#{p.id}"/>
+            </h:column>
+
+            <h:column>
+                <h:outputText value="#{p.name}"/>
+            </h:column>
+
+            <h:column>
+                <h:outputText value="#{p.price}"/>
+            </h:column>
+
+            <h:column>
+                <h:outputText value="#{p.quantity}"/>
+            </h:column>
+
+            <h:column>
+
+                <h:commandButton
+                    value="Xóa"
+                    action="#{productBean.delete(p.id)}"/>
+
+            </h:column>
+
+        </h:dataTable>
+
+    </h:form>
+
+    <br/>
+
+    <h:link
+        outcome="index"
+        value="Trang chủ"/>
+
+</h:body>
+
+</html>
